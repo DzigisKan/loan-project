@@ -1,0 +1,468 @@
+/* ==================== RESET & BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #1a202c;
+    min-height: 100vh;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    background-color: #1a365d;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #63b3ed;
+    letter-spacing: 1px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav ul li {
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar nav ul li:hover {
+    color: #63b3ed;
+}
+
+.accountField {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.08);
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.accountField h6 {
+    font-size: 12px;
+    color: #a0aec0;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.accountField h6 div {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.account-address {
+    font-size: 11px !important;
+    color: #63b3ed !important;
+    font-family: monospace;
+    word-break: break-all;
+}
+
+/* ==================== MAIN PAGE ==================== */
+.mainPage {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.profile-section h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* ==================== LOAN FORM CARD ==================== */
+.loan-form-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-left: 5px solid #3182ce;
+}
+
+.loan-form-card h2 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2d3748;
+    background: #f7fafc;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3182ce;
+    background: white;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-primary {
+    background: #3182ce;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background: #2c5282;
+    transform: translateY(-1px);
+}
+
+.btn-approve {
+    background: #38a169;
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s;
+}
+
+.btn-approve:hover { background: #276749; }
+.btn-approve:disabled { background: #9ae6b4; cursor: not-allowed; }
+
+.btn-reject {
+    background: #e53e3e;
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-reject:hover { background: #9b2c2c; }
+.btn-reject:disabled { background: #feb2b2; cursor: not-allowed; }
+
+.btn-return {
+    background: #805ad5;
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-return:hover { background: #553c9a; }
+.btn-return:disabled { background: #d6bcfa; cursor: not-allowed; }
+
+.btn-cancel {
+    background: #718096;
+    color: white;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cancel:hover { background: #4a5568; }
+.btn-cancel:disabled { background: #cbd5e0; cursor: not-allowed; }
+
+/* ==================== LOAN CARDS ==================== */
+.loan-card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s;
+}
+
+.loan-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.loan-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.loan-id {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.loan-card-body p {
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 7px;
+    line-height: 1.5;
+}
+
+.loan-card-body p strong {
+    color: #2d3748;
+    min-width: 160px;
+    display: inline-block;
+}
+
+.loan-card-actions {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #edf2f7;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ==================== STATUS BADGES ==================== */
+.loan-status {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-pending {
+    background: #fefcbf;
+    color: #744210;
+}
+
+.status-approved {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status-rejected {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+.status-returned {
+    background: #bee3f8;
+    color: #2a4365;
+}
+
+.status-cancelled {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+/* ==================== UKUPAN IZNOS ==================== */
+.total-amount {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 15px !important;
+    margin-top: 10px;
+    border-left: 4px solid #3182ce;
+}
+
+.overdue-amount {
+    background: #fff5f5;
+    color: #c53030;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 15px !important;
+    margin-top: 10px;
+    border-left: 4px solid #e53e3e;
+}
+
+/* ==================== PORUKE ==================== */
+.message {
+    margin-top: 14px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.message.success {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.message.error {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+/* ==================== EMPTY STATE ==================== */
+.empty-state {
+    text-align: center;
+    padding: 50px 20px;
+    color: #a0aec0;
+    font-size: 15px;
+    background: white;
+    border-radius: 14px;
+    border: 2px dashed #e2e8f0;
+}
+
+/* ==================== UNKNOWN USER ==================== */
+.unknown-card {
+    background: white;
+    border-radius: 16px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-left: 5px solid #e53e3e;
+}
+
+.unknown-card h2 {
+    font-size: 22px;
+    color: #c53030;
+    margin-bottom: 12px;
+}
+
+.unknown-card p {
+    color: #718096;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* ==================== MODAL ==================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 35px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    color: #2d3748;
+    margin-bottom: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #718096;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #e53e3e;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 16px;
+        flex-direction: column;
+        height: auto;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    .navbar nav ul {
+        gap: 12px;
+    }
+
+    .mainPage {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    .loan-form-card {
+        padding: 20px;
+    }
+
+    .loan-card-body p strong {
+        display: block;
+        margin-bottom: 2px;
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoanChain</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" type="module"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">
+            <span class="logo-text">💰 LoanChain</span>
+        </div>
+        <nav>
+            <ul>
+                <li>Почетна</li>
+                <li class="nav-link borrower-only" style="display:none;">Моје позајмице</li>
+                <li class="nav-link lender-only" style="display:none;">Захтеви</li>
+                <li>Контакт</li>
+            </ul>
+            <div class="accountField">
+                <div class="accountPhoto">
+                    <div class="borrower-only" style="display:none;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="borrower" height="50px"/>
+                    </div>
+                    <div class="lender-only" style="display:none;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910791.png" alt="lender" height="50px"/>
+                    </div>
+                </div>
+                <h6>Корисник:
+                    <div id="userName"></div>
+                    <div id="account" class="account-address"></div>
+                </h6>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN -->
+    <div class="mainPage">
+
+        <!-- ZAJMODAVAC VIEW -->
+        <div id="divLender" class="profile-section lender-only" style="display:none;">
+            <h1>Захтеви за позајмицу</h1>
+            <p class="subtitle">Прегледајте и управљајте захтевима које сте примили</p>
+            <div id="lenderLoanList"></div>
+        </div>
+
+        <!-- ZAJMOPRIMAC VIEW -->
+        <div id="divBorrower" class="profile-section borrower-only" style="display:none;">
+            <h1>Моје позајмице</h1>
+            <p class="subtitle">Управљајте својим захтевима за позајмицу</p>
+
+            <!-- Forma za novi zahtev -->
+            <div class="loan-form-card">
+                <h2>Нови захтев за позајмицу</h2>
+                <div class="form-group">
+                    <label>Занmodавац (адреса)</label>
+                    <select id="lenderSelect">
+                        <!-- Options ubacuje JS -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Износ (RSD)</label>
+                    <input type="number" id="loanAmount" placeholder="нпр. 50000" min="1"/>
+                </div>
+                <div class="form-group">
+                    <label>Каматна стопа (%)</label>
+                    <input type="number" id="loanInterest" placeholder="нпр. 5" min="0"/>
+                </div>
+                <div class="form-group">
+                    <label>Пенализација за кашњење (% месечно)</label>
+                    <input type="number" id="loanPenalty" placeholder="нпр. 2" min="0"/>
+                </div>
+                <div class="form-group">
+                    <label>Рок враћања (дана)</label>
+                    <input type="number" id="loanDuration" placeholder="нпр. 30" min="1"/>
+                </div>
+                <button id="createLoanBtn" class="btn-primary">Пошаљи захтев</button>
+                <div id="createMessage" class="message" style="display:none;"></div>
+            </div>
+
+            <!-- Lista pozajmica zajmoprimca -->
+            <div id="borrowerLoanList"></div>
+        </div>
+
+        <!-- NEPOZNAT KORISNIK -->
+        <div id="divUnknown" class="profile-section" style="display:none;">
+            <div class="unknown-card">
+                <h2>⚠️ Непозната адреса</h2>
+                <p>Ваша MetaMask адреса није регистрована у систему.<br/>Контактирајте администратора.</p>
+                <div id="unknownAddress" class="account-address"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL za detalje pozajmice -->
+    <div id="loanModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Детаљи позајмице</h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+</body>
+</html>
