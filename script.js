@@ -329,7 +329,7 @@ async function displayLenderLoans(address) {
         const actionsDiv = document.getElementById(`lender-actions-${loanId}`);
 
         // Dugmici za zajmodavca
-        if (loan.status === 0n) { // Pending
+        if (Number(loan.status) === 0) { // Pending
             const approveBtn = document.createElement("button");
             approveBtn.className = "btn-approve";
             approveBtn.textContent = "✅ Одобри";
@@ -392,7 +392,7 @@ async function displayBorrowerLoans(address) {
         const statusIndex = Number(loan.status);
 
         let totalAmount = null;
-        if (loan.status === 1n) {
+        if (Number(loan.status) === 1) {
             totalAmount = await calculateTotalAmount(loanId);
         }
 
@@ -422,7 +422,7 @@ async function displayBorrowerLoans(address) {
 
         const actionsDiv = document.getElementById(`borrower-actions-${loanId}`);
 
-        if (loan.status === 0n) { // Pending - moze otkazati
+        if (Number(loan.status) === 0) { // Pending - moze otkazati
             const cancelBtn = document.createElement("button");
             cancelBtn.className = "btn-cancel";
             cancelBtn.textContent = "🚫 Откажи захтев";
@@ -441,7 +441,7 @@ async function displayBorrowerLoans(address) {
             actionsDiv.appendChild(cancelBtn);
         }
 
-        if (loan.status === 1n) { // Approved - moze vratiti
+        if (Number(loan.status) === 1) { // Approved - moze vratiti
             const returnBtn = document.createElement("button");
             returnBtn.className = "btn-return";
             returnBtn.textContent = "💸 Врати позајмицу";
