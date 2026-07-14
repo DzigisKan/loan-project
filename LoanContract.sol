@@ -7,7 +7,7 @@ contract LoanContract {
     enum LoanStatus { Pending, Approved, Rejected, Returned, Cancelled }
 
     // Struktura pozajmice
-    struct Loan {
+    struct Loan {                                                        // cuva sve inf o jednoj pozajmici ko je sta je itd...
         address borrower;        // zajmoprimac
         address lender;          // zajmodavac
         uint256 amount;          // iznos u "dinarima" (ceo broj)
