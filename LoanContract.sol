@@ -22,12 +22,12 @@ contract LoanContract {
     uint256 public loanCount = 0;
 
     // Sve pozajmice
-    mapping(uint256 => Loan) public loans;
+    mapping(uint256 => Loan) public loans;                        // Cuva sve pozajmice po ID
 
-    // Pozajmice po zajmoprimcu
+    // Pozajmice po zajmoprimcu                                    // Cuva listu idjeva po adr zajmoprimca
     mapping(address => uint256[]) public borrowerLoans;
 
-    // Pozajmice po zajmodavcu
+    // Pozajmice po zajmodavcu                                        // Cuva listu idjeva po zajmodavcu
     mapping(address => uint256[]) public lenderLoans;
 
     // ------------------------ CREATE ------------------------
@@ -41,7 +41,7 @@ contract LoanContract {
         uint256 _durationDays
     ) public {
         require(_amount > 0, "Iznos mora biti veci od 0.");
-        require(_durationDays > 0, "Rok mora biti veci od 0 dana.");
+        require(_durationDays > 0, "Rok mora biti veci od 0 dana.");            // svak funkcija ima require provere samo zajmodavac moze da odobri itd
         require(_lender != msg.sender, "Ne mozete pozajmiti sami sebi.");
 
         loans[loanCount] = Loan({
@@ -98,7 +98,7 @@ contract LoanContract {
         return total;
     }
 
-    // Provjera da li je rok prosao
+    // Provera da li je rok prosao
     function isOverdue(uint256 _loanId) public view returns (bool) {
         Loan memory loan = loans[_loanId];
         if (loan.status != LoanStatus.Approved) return false;
