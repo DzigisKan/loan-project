@@ -14,7 +14,7 @@ contract LoanContract {
         uint256 interestRate;    // kamatna stopa u %
         uint256 penaltyRate;     // penalizacija u % mesecno
         uint256 durationDays;    // rok vracanja u danima
-        uint256 approvedAt;      // kada je odobreno (timestamp)
+        uint256 approvedAt;      // kada je odobreno (timestamp) cuva tacno vreme u sekundama a bi znao da li je proslo vreme
         LoanStatus status;       // status pozajmice
     }
 
