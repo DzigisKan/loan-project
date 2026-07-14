@@ -24,6 +24,7 @@ const korisnici = [
     { address: "0x0392Df9053d68329867E9367Abe528FDEf8a1158", userName: "Марко Марковић" },
     { address: "0x97F762C5F3a4f285d2DCAd2b3A26dFD04188291E", userName: "Ана Анић" },
     { address: "0x676164c8A4681e6c8A3203ad65EBEcE1d7be96c7", userName: "Никола Николић" },
+    { address: "0x385A973C84AEe6d6C2332F0BcC319cdDDE08e10F", userName: "Игор Станковић" },
 ];
 
 // Svi korisnici mogu biti i zajmodavci i zajmoprimci
